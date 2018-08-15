@@ -1,0 +1,33 @@
+<h3>
+  Busca tu Música:
+</h3>
+<hr style="background-color: #1ED760">
+
+<p class="lead">
+  Usa la aplicación Master Music para encontrar tu música favorita. Accede a la base de datos de
+  <span class="text-white">Spotify</span>.
+  <br>
+</p>
+
+<div class="btn-group mb-3" data-toggle="buttons">
+
+  <label class="btn btn-outline-primary active fixed" (click)="setOption(1)">
+    <input type="radio" name="option" id="option1" [checked]="option === 1" autocomplete="off">
+    <span *ngIf="option === 1">
+      <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Artista
+  </label>
+
+  <label class="btn btn-outline-primary fixed" (click)="setOption(2)">
+    <input type="radio" name="option" id="option2" [checked]="option === 2" autocomplete="off">
+    <span *ngIf="option === 2">
+      <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Album
+  </label>
+
+</div>
+
+<div *ngIf="option === 1">
+  <app-search-artist></app-search-artist>
+</div>
+<div *ngIf="option === 2">
+  <app-search-album></app-search-album>
+</div>

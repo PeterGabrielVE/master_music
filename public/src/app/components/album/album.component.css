@@ -1,0 +1,51 @@
+.img {   
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.rounded-circle {
+   border: 3px solid grey;
+}
+
+img {
+   height: 100%;
+   max-height: 250px;
+}
+
+.fa {
+   color: #1ED760;
+}
+
+@media screen and (max-width: 767px){
+   .info {
+      text-align: center;
+   }
+}
+
+.btn {
+   color: #1ED760;
+   border-color: #1ED760;
+}
+
+.btn:hover {
+   background-color: #1ED760;
+   border-color: #1ED760;
+   color: #fff;
+}
+
+.artist-link:hover {
+   text-decoration: none;
+}
+
+tr {
+   border-top: hidden;
+}
+
+.table-responsive {
+   display: table;
+}
+
+.table {
+   font-size: 20px;
+}

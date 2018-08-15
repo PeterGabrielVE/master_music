@@ -1,0 +1,60 @@
+<div *ngIf="isLoading">
+  <p class="h1 mt-5 text-center">
+    <i class="fa fa-spinner fa-pulse fa-fw"></i>&nbsp;&nbsp;&nbsp;Cargando...
+  </p>
+</div>
+
+<div *ngIf="album && !isLoading" class="mt-5">
+
+  <div class="row">
+    <div class="img col-sm-12 col-md-4 col-lg-4 col-xl-4 my-auto">
+      <img class="mx-auto d-block img-fluid rounded-circle" src="{{ album?.images[1].url }}" alt="">
+    </div>
+    <div class="info col-sm-12 col-md-8 col-lg-8 col-xl-8 align-middle my-auto">
+      <h1>
+        {{ album?.name }}
+      </h1>
+      <h5 class="text-muted font-italic">
+        <a class="artist-link" *ngFor="let artist of album?.artists" routerLink="/artist/{{artist.id}}">{{ artist.name }}.&nbsp;&nbsp;</a>
+      </h5>
+      <p class="mt-3">
+        <strong>Lanzamiento: </strong>
+        {{ album?.release_date | date: 'dd/MM/yyyy' }}
+      </p>
+      <p>
+        <strong>Popularidad: </strong>
+        <span>{{ album?.popularity }}&nbsp;
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span>
+      </p>
+      <a class="btn btn-outline-primary" href="{{ album?.external_urls.spotify }}" target="_blank">Ir a Spotify</a>
+    </div>
+  </div>
+
+  <h2 class="mt-5">Canciones:</h2>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nro.</th>
+          <th>Canción</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        <tr *ngFor="let track of album?.tracks.items">
+          <th>{{ track.track_number }}</th>
+          <th>
+            <a class="track-link" href="{{ track.external_urls.spotify }}" target="_blank">{{ track.name }}</a>
+          </th>
+          <th>{{ track.duration_ms | date: 'mm:ss' }}</th>
+          <th>
+            <a *ngIf="track.preview_url" class="btn btn-outline-primary" href="{{ track.preview_url }}" target="_blank">Vista Previa</a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
