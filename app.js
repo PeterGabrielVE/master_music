@@ -5,8 +5,8 @@ const cors = require('cors');
 const path = require('path');
 
 // Spotify credentials
-const client_id = '3c9642299ae843d19168eceecbc8b56f';
-const client_secret = '58efc334efe14baabf78d82fae66a6fa';
+const client_id = 'a93a361accaf44238610c4a9c2555071';
+const client_secret = '3e136e5a63544310876a11a729533239';
 
 // PORT
 const port = process.env.PORT || 4200;
@@ -45,5 +45,5 @@ app.get('/credentials', function (req, res) {
 
 // Start Server
 app.listen(port, () => {
-   console.log('Server started on port ' + port);
+   console.log('Servidor cargado en el puerto ' + port);
 });

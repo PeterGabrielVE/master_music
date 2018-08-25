@@ -1,21 +1,13 @@
 {
-  "name": "ng4-spotify",
+  "name": "MasterMusic",
   "version": "1.0.0",
   "description": "Backend para pedir el token a Spotify",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-  
-  },
-  "author": "Marcio Matteucci",
+  "author": "Pedro Gabriel",
   "license": "MIT",
-  "bugs": {
-  
-  },
-
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
